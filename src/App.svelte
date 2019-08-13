@@ -7,11 +7,7 @@
 	.hero {
 		text-align:center;
 	 }
-	 .search {
-		 margin-left:3rem;
-		 margin-top: 3rem;
-		 height:25vh;
-	 }
+	
 	 .stars {
 		 margin-left:3rem;
 	 }
@@ -30,9 +26,9 @@
 	</div>
 
 <div class="container">
-	<div class="row">
+	
 		<UserSearch />	
-	</div>
+
 	<div class="row">
 		<div class="column stars">
 			<h4>Starred repos</h4>

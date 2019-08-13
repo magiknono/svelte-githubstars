@@ -1,6 +1,7 @@
 <script>
   export let username;
   export let avatar;
+  export let html_url;
 </script>
 
 <style>
@@ -25,5 +26,5 @@
 
 <div class="user">
   <img src="{avatar}" alt="{username}'s Avatar" />
-  <h3>{username}</h3>
+  <h3><a href="{html_url}">{username}</a></h3>
 </div>

@@ -19,7 +19,7 @@
     }
 </style>
 
-<div class="column search">
+<div class="column">
     <h4><i>searching: {usernameQuery}</i></h4>
 	<form on:submit|preventDefault={handleSubmit}>
 		<fieldset>
@@ -30,7 +30,7 @@
 	</form>
 
 {#if user}
-    <User username={user.login} avatar={user.avatar_url} />
+    <User username={user.login} avatar={user.avatar_url} html_url={user.html_url} />
 {/if}
    
 </div>
