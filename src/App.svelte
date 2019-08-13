@@ -1,4 +1,5 @@
 <script>
+	import UserSearch from './UserSearch.svelte';
 	
 </script>
 
@@ -30,14 +31,7 @@
 
 <div class="container">
 	<div class="row">
-		<div class="column search">
-			<form>
-				<fieldset>
-					<label for="userName">Name</label>
-					<input type="text" placeholder="Type a github nickname">
-				</fieldset>
-			</form>
-		</div>	
+		<UserSearch />	
 	</div>
 	<div class="row">
 		<div class="column stars">
