@@ -2,6 +2,8 @@
     import User from './User.svelte';
     import Stars from './Stars.svelte';
     import Loading from './Loading.svelte';
+    import { fade } from 'svelte/transition';
+
     let usernameQuery = "magiknono";
     let user;
     let stars;
@@ -52,8 +54,8 @@
     <Loading />
 {:else}
     {#if stars}
-    <div class="row">
-            <div class="column stars">
+    <div transition:fade class="row">
+            <div class="column">
                 <h4>Starred repos</h4>
                 <table>
                     <thead>
