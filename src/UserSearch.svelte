@@ -1,26 +1,26 @@
 <script>
     import User from './User.svelte';
     import Stars from './Stars.svelte';
+    import Loading from './Loading.svelte';
     let usernameQuery = "magiknono";
     let user;
     let stars;
     let loading = false;
 
     function handleSubmit() {
-        let loading = true;
+        loading = true;
         fetch(`https://api.github.com/users/${usernameQuery}`)
             .then(resp => resp.json())
             .then(data => (user = data)); 
-             handleSubmitGetStarred();    
+        handleSubmitGetStarred();    
     };
     function handleSubmitGetStarred() {
             
         fetch(`https://api.github.com/users/${usernameQuery}/starred`)
             .then(resp => resp.json())
+            .then(loading = false)
             .then(data => (stars = data));
-            let loading = false;      
     };
-
     
 </script>
 
@@ -48,27 +48,30 @@
 
 
 </div>
+{#if loading}
+    <Loading />
+{:else}
+    {#if stars}
+    <div class="row">
+            <div class="column stars">
+                <h4>Starred repos</h4>
+                <table>
+                    <thead>
+                        <tr>
+                        <th>Repo</th>
+                        <th>Language</th>
+                        <th>Fork Count</th>
+                        <th>Stars Count</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {#each stars as star}
+                            <Stars repo={star.name} link={star.html_url} lang={star.language} totalStars={star.stargazers_count} totalForks={star.forks_count} />
+                        {/each}	
+                    </tbody>
+                </table>
+            </div>	
+        </div>
 
-{#if stars}
-<div class="row">
-		<div class="column stars">
-			<h4>Starred repos</h4>
-			<table>
-				<thead>
-					<tr>
-					<th>Repo</th>
-					<th>Language</th>
-					<th>Fork Count</th>
-					<th>Stars Count</th>
-					</tr>
-				</thead>
-				<tbody>
-                    {#each stars as star}
-                        <Stars repo={star.name} link={star.html_url} lang={star.language} totalStars={star.stargazers_count} totalForks={star.forks_count} />
-                    {/each}	
-				</tbody>
-			</table>
-		</div>	
-	</div>
-
+    {/if}
 {/if}
