@@ -1,3 +1,4 @@
+import 'minireset.css';
 import 'milligram';
 import App from './App.svelte';
 
