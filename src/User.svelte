@@ -1,4 +1,5 @@
 <script>
+  import { fly } from 'svelte/transition';
   export let username;
   export let avatar;
   export let html_url;
@@ -24,7 +25,7 @@
   }
 </style>
 
-<div class="user">
+<div class="user" transition:fly="{{ x: 400, duration: 2000 }}">
   <img src="{avatar}" alt="{username}'s Avatar" />
   <h3><a href="{html_url}">{username}</a></h3>
 </div>
