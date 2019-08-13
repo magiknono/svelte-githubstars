@@ -1,17 +1,12 @@
 <script>
 	import UserSearch from './UserSearch.svelte';
-	
+
 </script>
 
 <style>
 	.hero {
 		text-align:center;
 	 }
-	
-	 .stars {
-		 margin-left:3rem;
-	 }
-	
 </style>
 
 	<div class="container">

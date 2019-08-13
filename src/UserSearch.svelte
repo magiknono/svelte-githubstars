@@ -4,10 +4,13 @@
     import Loading from './Loading.svelte';
     import { fade } from 'svelte/transition';
 
-    let usernameQuery = "magiknono";
+    let usernameQuery = "";
     let user;
     let stars;
     let loading = false;
+    let hereSvelte = false;
+    const handleMouseenter = () => hereSvelte = true;
+    const handleMouseleave = () => hereSvelte = false;
 
     function handleSubmit() {
         loading = true;
@@ -30,17 +33,40 @@
     .searched-username {
         align: center;
     }
-</style>
+    img {
+		position: absolute;
+		right: 0;
+		top: -90px;
+		transform: translate(-150%, 0);
+		transform-origin: 100% 100%;
+		transition: transform 0.4s;
+	}
+    .curious {
+		transform: translate(-15%, 0) rotate(0deg);
+	}
 
+	:global(body) {
+		overflow: hidden;
+	}
+</style>
+<svelte:body
+	on:mouseenter={handleMouseenter}
+	on:mouseleave={handleMouseleave}
+/>
+<img
+	class:curious={hereSvelte}
+	alt="Awesome tutorial on svelte.dev"
+	src="favicon.png"
+>
 <div class="column">
-    <h4><i>searching: {usernameQuery}</i></h4>
 	<form on:submit|preventDefault={handleSubmit}>
 		<fieldset>
 			<label for="userName">Name</label>
-			<input type="text" bind:value={usernameQuery} placeholder="Type a github nickname" />
-            <button class="button">Search</button>
+			<input type="text" style="width:20%" bind:value={usernameQuery} placeholder="Enter a github username" />
+            <button class="button">Find starred repos</button>
 		</fieldset>
 	</form>
+    <h4><i>{usernameQuery}</i></h4>
 
 {#if user}
     <User username={user.login} avatar={user.avatar_url} html_url={user.html_url} />
@@ -54,7 +80,7 @@
     <Loading />
 {:else}
     {#if stars}
-    <div transition:fade class="row">
+    <div transition:fade={{duration: 1000 }} class="row">
             <div class="column">
                 <h4>Starred repos</h4>
                 <table>
