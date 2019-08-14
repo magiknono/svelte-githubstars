@@ -1,3 +1,14 @@
+# svelte with webpack
+
+Finding starred repo for a given user.
+
+** svelte
+** svelte-loader
+** webpack
+** milligramcss
+
+![screenshot]((https://raw.githubusercontent.com/magiknono/sveltewithwebpack/master/public/svelte-test.gif)
+
 # svelte app
 
 This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template-webpack.
