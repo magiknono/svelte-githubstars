@@ -1,13 +1,14 @@
 # svelte with webpack
 
-Finding starred repo for a given user.
+Testing sveltejs compiler :
+web app: Finding starred repo for a given user.
 
 ** svelte
 ** svelte-loader
 ** webpack
 ** milligramcss
 
-![screenshot]((https://raw.githubusercontent.com/magiknono/sveltewithwebpack/master/public/svelte-test.gif)
+![screenshot]((https://raw.githubusercontent.com/magiknono/svelte-githubstars/master/public/svelte-test.gif)
 
 # svelte app
 
