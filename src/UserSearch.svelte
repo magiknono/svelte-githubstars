@@ -30,9 +30,6 @@
 </script>
 
 <style>
-    .searched-username {
-        align: center;
-    }
     img {
 		position: absolute;
 		right: 0;

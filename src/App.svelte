@@ -10,9 +10,6 @@
 	 #subhero {
 		 font-size:large;
 	 }
-	 #user-search {
-		
-	 }
 </style>
 
 	<div class="container">
