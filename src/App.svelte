@@ -4,17 +4,24 @@
 </script>
 
 <style>
-	.hero {
+	#hero {
 		text-align:center;
+	 }
+	 #subhero {
+		 font-size:large;
+	 }
+	 #user-search {
+		
 	 }
 </style>
 
 	<div class="container">
 		<div class="row">
 			<div class="column">
-				<h1>Find Stars from a GitHub user</h1> 
+				<h1 id="hero">Find Stars from a GitHub user</h1> 
+				<br />
 					<blockquote>
-						<h2><em>Reactive frontend with svelte 3</em></h2>
+						<h2 id="subhero"><em>Reactive frontend with svelte 3</em></h2>
 					</blockquote>
 			</div>
 		</div>

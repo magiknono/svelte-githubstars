@@ -67,7 +67,7 @@
 		</fieldset>
 	</form>
     <h4><i>{usernameQuery}</i></h4>
-
+    <br />
 {#if user}
     <User username={user.login} avatar={user.avatar_url} html_url={user.html_url} />
 {/if}
@@ -79,6 +79,7 @@
 {#if loading}
     <Loading />
 {:else}
+     <br />
     {#if stars}
     <div transition:fade={{duration: 1000 }} class="row">
             <div class="column">
