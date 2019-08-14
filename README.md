@@ -8,7 +8,7 @@ web app: Finding starred repo for a given user.
 ** webpack
 ** milligramcss
 
-![screenshot]((https://raw.githubusercontent.com/magiknono/svelte-githubstars/master/public/svelte-test.gif)
+![screenshot](https://raw.githubusercontent.com/magiknono/svelte-githubstars/master/public/svelte-test.gif)
 
 # svelte app
 
