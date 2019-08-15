@@ -25,6 +25,7 @@
             .then(resp => resp.json())
             .then(loading = false)
             .then(data => (stars = data));
+            usernameQuery = "";
     };
     
 </script>
