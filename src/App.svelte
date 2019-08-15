@@ -1,33 +1,45 @@
 <script>
-	import UserSearch from './UserSearch.svelte';
-
+	import { Router, Link, Route } from "svelte-routing";
+	import Home from './routes/Home.svelte';
+	import About from './routes/About.svelte';
+	
+	export let url = "";
 </script>
 
 <style>
-	#hero {
-		text-align:center;
-	 }
-	 #subhero {
-		 font-size:large;
-	 }
+.navbar {
+  margin-bottom: 10px;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 5px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.navbar li {
+    float: left;
+	margin-bottom: 0;
+	margin-left:20px;
+	font-size:x-large;
+}
 </style>
 
-	<div class="container">
-		<div class="row">
-			<div class="column">
-				<h1 id="hero">Find Stars from a GitHub user</h1> 
-				<br />
-					<blockquote>
-						<h2 id="subhero"><em>Reactive frontend with svelte 3</em></h2>
-					</blockquote>
-			</div>
+<Router url="{url}">
+	<div class='container'>
+      	<div class='navbar'>
+			<ul>
+				<li><Link to="/">Home</Link></li>
+				<li><Link to="about">About</Link></li>
+			</ul>
 		</div>
 	</div>
-
-<div class="container">
 	
-		<UserSearch />	
+			<!-- component -->
+			<Route path="/"><Home /></Route>
+			<!-- component -->
+			<Route path="about" component="{About}" />
+</Router>
 
 	
-
-</div>

@@ -51,15 +51,18 @@
         display:none;
     }
 </style>
+
 <svelte:body
 	on:mouseenter={handleMouseenter}
 	on:mouseleave={handleMouseleave}
 />
+
 <img
 	class:curious={hereSvelte}
 	alt="Awesome tutorial on svelte.dev"
 	src="favicon.png"
 >
+
 <div class="column">
 	<form on:submit|preventDefault={handleSubmit}>
 		<fieldset>
@@ -73,16 +76,11 @@
 {#if user}
     <User username={user.login} avatar={user.avatar_url} html_url={user.html_url} />
 {/if}
-
-
-
-
 </div>
+
 {#if loading}
     <Loading />
 {:else}
-    
-    
      <br />
     {#if stars}
     <input type="checkbox" bind:checked={hide}> Hide Results
