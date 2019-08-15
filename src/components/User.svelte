@@ -5,7 +5,8 @@
   export let html_url;
 </script>
 
-<style>
+<style lang="scss">
+$color:red;
   .user {
     padding: 5px;
     border: 1px solid #ddd;
@@ -22,10 +23,12 @@
   h3 {
     font-size: 16px;
     margin: 0;
+    color: $color;
   }
 </style>
 
 <div class="user" transition:fly="{{ x: 400, duration: 2000 }}">
   <img src="{avatar}" alt="{username}'s Avatar" />
-  <h3><a href="{html_url}">{username}</a></h3>
+  <h3>user: <a href="{html_url}">{username}</a></h3>
+
 </div>
