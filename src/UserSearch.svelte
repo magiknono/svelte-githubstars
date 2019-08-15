@@ -9,6 +9,7 @@
     let stars;
     let loading = false;
     let hereSvelte = false;
+    let hide = false;
     const handleMouseenter = () => hereSvelte = true;
     const handleMouseleave = () => hereSvelte = false;
 
@@ -45,7 +46,10 @@
 
 	:global(body) {
 		overflow: hidden;
-	}
+    }
+    .hide {
+        display:none;
+    }
 </style>
 <svelte:body
 	on:mouseenter={handleMouseenter}
@@ -77,8 +81,12 @@
 {#if loading}
     <Loading />
 {:else}
+    
+    
      <br />
     {#if stars}
+    <input type="checkbox" bind:checked={hide}> Hide Results
+    <div class:hide>
     <div transition:fade={{duration: 1000 }} class="row">
             <div class="column">
                 <h4>Starred repos</h4>
@@ -99,6 +107,7 @@
                 </table>
             </div>	
         </div>
-
+    </div>
     {/if}
+    
 {/if}
