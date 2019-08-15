@@ -10,8 +10,6 @@
     let loading = false;
     let hereSvelte = false;
     let hide = false;
-    const handleMouseenter = () => hereSvelte = true;
-    const handleMouseleave = () => hereSvelte = false;
 
     function handleSubmit() {
         loading = true;
@@ -32,36 +30,8 @@
 </script>
 
 <style>
-    img {
-		position: absolute;
-		right: 0;
-		top: -90px;
-		transform: translate(-150%, 0);
-		transform-origin: 100% 100%;
-		transition: transform 0.4s;
-	}
-    .curious {
-		transform: translate(-15%, 0) rotate(0deg);
-	}
 
-	:global(body) {
-		overflow: hidden;
-    }
-    .hide {
-        display:none;
-    }
 </style>
-
-<svelte:body
-	on:mouseenter={handleMouseenter}
-	on:mouseleave={handleMouseleave}
-/>
-
-<img
-	class:curious={hereSvelte}
-	alt="Awesome tutorial on svelte.dev"
-	src="favicon.png"
->
 
 <div class="column">
 	<form on:submit|preventDefault={handleSubmit}>
